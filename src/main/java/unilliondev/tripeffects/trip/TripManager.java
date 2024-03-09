@@ -9,14 +9,8 @@ import java.util.HashMap;
 
 public class TripManager {
 
-    public static HashMap<Trips, TripEffect> effects = new HashMap<>();
-    static {
-        effects.put(Trips.DARKNESS, new DarknessTrip());
-        effects.put(Trips.GLOWING, new GlowingTrip());
-    }
-
     public static TripEffect getTripEffect(Trips trip) {
-        return effects.get(trip);
+        return trip.getTripEffect();
     }
 
     public static void sendTrip(Player player, Trips trip) {
