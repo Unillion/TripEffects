@@ -1,0 +1,4 @@
+name: TripEffects
+version: '${project.version}'
+main: unilliondev.tripeffects.TripEffects
+api-version: '1.20'
