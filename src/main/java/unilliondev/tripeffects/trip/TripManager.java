@@ -20,11 +20,7 @@ public class TripManager {
     }
 
     public static void sendTrip(Player player, Trips trip) {
-        try {
-            getTripEffect(trip).sendTrip(player);
-        } catch (ReflectiveOperationException e) {
-            throw new RuntimeException(e);
-        }
+        getTripEffect(trip).sendTrip(player);
     }
 
     public static void initTrips() {
