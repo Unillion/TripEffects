@@ -43,6 +43,26 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.ospaindustries</groupId>
+                <artifactId>dice-test-uploader</artifactId>
+                <version>0.1-TEST</version>
+
+                <executions>
+                    <execution>
+                        <id>JAR Uploading</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>upload</goal>
+                        </goals>
+                        <!-- Опционально -->
+                        <!--<configuration>
+                            <from>target/SuperPlugin.jar</from>
+                            <to>plugins/SuperPlugin.jar</to>
+                        </configuration>-->
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
         <resources>
             <resource>
@@ -51,6 +71,13 @@
             </resource>
         </resources>
     </build>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>ospa-repo</id>
+            <url>https://ericsson.cfd/maven/</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <repositories>
         <repository>
@@ -61,6 +88,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>https://repo.dmulloy2.net/repository/public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -68,6 +99,12 @@
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.20.4-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.comphenix.protocol</groupId>
+            <artifactId>ProtocolLib</artifactId>
+            <version>5.2.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
