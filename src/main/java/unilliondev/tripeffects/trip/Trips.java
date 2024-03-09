@@ -1,7 +1,7 @@
 package unilliondev.tripeffects.trip;
 
 public enum Trips {
-    DARKNESS(new DarknessTrip),
+    DARKNESS(new DarknessTrip()),
     GLOWING(new GlowingTrip()) 
 
 
