@@ -16,10 +16,4 @@ public class TripManager {
     public static void sendTrip(Player player, Trips trip) {
         getTripEffect(trip).sendTrip(player);
     }
-
-    public static void initTrips() {
-        for (TripEffect effect : effects.values()) {
-            effect.init(TripEffects.getInstance());
-        }
-    }
 }
