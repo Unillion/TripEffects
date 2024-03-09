@@ -11,7 +11,7 @@ public enum Trips {
         this.effect = effect;
     }
 
-    public String getTripEffect() {
+    public TripEffect getTripEffect() {
         return effect;
     }
 }
