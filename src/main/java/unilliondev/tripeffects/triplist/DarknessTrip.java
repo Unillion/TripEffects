@@ -12,9 +12,4 @@ public class DarknessTrip implements TripEffect {
     public void sendTrip(Player player) {
         player.addPotionEffect(new PotionEffect(PotionEffectType.DARKNESS,15*20,1));
     }
-
-    @Override
-    public void init(JavaPlugin main) {
-
-    }
 }

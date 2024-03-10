@@ -12,9 +12,4 @@ public class GlowingTrip implements TripEffect {
     public void sendTrip(Player player) {
         player.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 156 * 20,1, false, false));
     }
-
-    @Override
-    public void init(JavaPlugin main) {
-
-    }
 }

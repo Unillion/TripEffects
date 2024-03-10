@@ -1,11 +1,8 @@
 package unilliondev.tripeffects.trip;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-import unilliondev.tripeffects.TripEffects;
-import unilliondev.tripeffects.triplist.DarknessTrip;
-import unilliondev.tripeffects.triplist.GlowingTrip;
-
-import java.util.HashMap;
+import unilliondev.tripeffects.triplist.ColoredScreenTrip;
 
 public class TripManager {
 
@@ -15,5 +12,15 @@ public class TripManager {
 
     public static void sendTrip(Player player, Trips trip) {
         getTripEffect(trip).sendTrip(player);
+    }
+
+    public static void sendTrip(Player player, Trips trip, ChatColor color) {
+        TripEffect tripEffect = trip.getTripEffect();
+
+        if (tripEffect instanceof ColoredScreenTrip) {
+            ((ColoredScreenTrip) tripEffect).setColor(color);
+        }
+
+        tripEffect.sendTrip(player);
     }
 }

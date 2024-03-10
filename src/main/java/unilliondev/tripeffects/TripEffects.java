@@ -1,5 +1,8 @@
 package unilliondev.tripeffects;
 
+import com.comphenix.protocol.ProtocolLibrary;
+import com.comphenix.protocol.ProtocolManager;
+import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -10,12 +13,12 @@ import unilliondev.tripeffects.trip.Trips;
 public final class TripEffects extends JavaPlugin implements Listener {
 
     private static TripEffects Instance;
+    private static ProtocolManager ProtocolManager;
 
     @Override
     public void onEnable() {
         Instance = this;
-
-        TripManager.initTrips();
+        ProtocolManager = ProtocolLibrary.getProtocolManager();
 
         getServer().getPluginManager().registerEvents(this, this);
     }
@@ -28,8 +31,12 @@ public final class TripEffects extends JavaPlugin implements Listener {
         return Instance;
     }
 
+    public static ProtocolManager getProtocolManager() {
+        return ProtocolManager;
+    }
+
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-        TripManager.sendTrip(event.getPlayer(), Trips.GLOWING);
+        TripManager.sendTrip(event.getPlayer(), Trips.BELCH);
     }
 }
